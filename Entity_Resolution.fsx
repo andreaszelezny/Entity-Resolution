@@ -29,6 +29,7 @@ type AmazonSmall = CsvProvider< @"C:\Amazon_small.csv", HasHeaders = true, Schem
 let amazonSmall = AmazonSmall.Load(@"C:\Amazon_small.csv")
 let stopwords = System.IO.File.ReadAllLines(@"C:\stopwords.txt") |> Set.ofArray
 
+[<Literal>]
 let quickbrownfox = "A quick brown fox jumps over the lazy dog."
 
 // A simple implementation of input string tokenization
