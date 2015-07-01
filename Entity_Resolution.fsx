@@ -47,8 +47,10 @@ let tokenize (str: string) =
 
 tokenize quickbrownfox
 
-let amazonRecToToken = amazonSmall.Rows |> Seq.map (fun r -> (r.Id, tokenize (sprintf "%s %s %s" r.Title r.Manufacturer r.Description)))
-let googleRecToToken = googleSmall.Rows |> Seq.map (fun r -> (r.Id, tokenize (sprintf "%s %s %s" r.Name r.Manufacturer r.Description)))
+let amazonRecToToken = amazonSmall.Rows |> Seq.map (fun r -> 
+    (r.Id, tokenize (sprintf "%s %s %s" r.Title r.Manufacturer r.Description)))
+let googleRecToToken = googleSmall.Rows |> Seq.map (fun r -> 
+    (r.Id, tokenize (sprintf "%s %s %s" r.Name r.Manufacturer r.Description)))
 
 // Count and return the number of tokens
 let countTokens (vendorTokens: seq<string*string list>) =
