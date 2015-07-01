@@ -104,7 +104,7 @@ let tokenSmallestIdf = idfsSmallWeights |> Seq.minBy (fun kvp -> kvp.Value)
 let smallIDFTokens = idfsSmallWeights |> Seq.sortBy (fun kvp -> kvp.Value) |> Seq.take 11
 
 // Plot a histogram of IDF values
-#load "..\packages\FSharp.Charting.0.90.10\FSharp.Charting.fsx"
+#load @"..\packages\FSharp.Charting.0.90.10\FSharp.Charting.fsx"
 open FSharp.Charting
 
 let bins = Array.zeroCreate<int> 50
